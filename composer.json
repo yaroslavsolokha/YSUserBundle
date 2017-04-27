@@ -1,0 +1,36 @@
+{
+  "name" : "ys/userbundle",
+  "description" : "A user bundle",
+  "type" : "symfony-bundle",
+  "authors" : [{
+    "name" : "Yaroslav Solokha",
+    "email" : "yaroslav.solokha@gmail.com"
+  }],
+  "keywords" : [
+    "User bundle"
+  ],
+  "license" : [
+    "MIT"
+  ],
+  "require" : {
+    "friendsofsymfony/user-bundle": "^2.0",
+    "sonata-project/admin-bundle": "^3.16",
+    "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+    "hwi/oauth-bundle": "^0.5.3",
+    "sonata-project/user-bundle": "dev-add_support_for_fos_user2",
+    "egeloen/ordered-form-bundle": "^3.0"
+  },
+  "autoload" : {
+    "psr-0" : {
+      "YS\\UserBundle" : ""
+    }
+  },
+  "target-dir" : "YS/UserBundle",
+  "repositories" : [{
+  }],
+  "extra" : {
+    "branch-alias" : {
+      "dev-master" : "1.0-dev"
+    }
+  }
+}
