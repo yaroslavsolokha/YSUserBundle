@@ -1,5 +1,5 @@
 {
-  "name" : "ys/userbundle",
+  "name" : "ys/user-bundle",
   "description" : "A user bundle",
   "type" : "symfony-bundle",
   "authors" : [{
@@ -17,7 +17,6 @@
     "sonata-project/admin-bundle": "^3.16",
     "sonata-project/doctrine-orm-admin-bundle": "^3.1",
     "hwi/oauth-bundle": "^0.5.3",
-    "sonata-project/user-bundle": "dev-add_support_for_fos_user2",
     "egeloen/ordered-form-bundle": "^3.0"
   },
   "autoload" : {
