@@ -12,6 +12,7 @@
   "license" : [
     "MIT"
   ],
+  "minimum-stability": "dev",
   "require" : {
     "friendsofsymfony/user-bundle": "^2.0",
     "sonata-project/admin-bundle": "^3.16",
