@@ -1,5 +1,5 @@
 {
-  "name" : "",
+  "name" : "ys/user-bundle",
   "description" : "A user bundle",
   "type" : "symfony-bundle",
   "authors" : [{
