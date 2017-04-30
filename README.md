@@ -66,6 +66,7 @@ imports:
 ys_user_bundle:
     resource: "@YSUserBundle/Resources/config/routing.yml"
 ```
+##### 7. bin/console assets:install
 
 #### TODO
 ##### 1. sonata-project/user-bundle": "dev-add_support_for_fos_user2 - move to bundle composer
