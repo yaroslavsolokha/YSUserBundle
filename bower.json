@@ -1,0 +1,16 @@
+{
+  "name": "symfony",
+  "description": "symfony",
+  "main": "",
+  "authors": [
+    "Yaroslav Solokha"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "materialize": "^0.98.1",
+    "bootstrap-social": "^5.1.1"
+  }
+}
