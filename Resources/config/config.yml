@@ -35,11 +35,6 @@ sonata_admin:
         blocks:
             - { position: left, type: sonata.admin.block.admin_list }
         groups:
-            blog:
-                label: Blog
-                items:
-                    - admin.blog_post
-                    - admin.category
             user:
                 label: Users management
                 items:
