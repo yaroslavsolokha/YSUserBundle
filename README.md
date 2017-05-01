@@ -81,6 +81,9 @@ ys_user_bundle:
 ###### - XXX/app_dev.php/login
 ###### - XXX/app_dev.php/admin
 ###### - XXX/app_dev.php/register
+###### - XXX/app_dev.php/resetting/request
+###### - XXX/app_dev.php/profile
+###### - XXX/app_dev.php/profile/edit
 ##### 12. Extend Bundle layout for index page, replace app/Resources/views/default/index.html.twig to:
 ```
 {% extends 'YSUserBundle::base.html.twig' %}
@@ -92,6 +95,9 @@ ys_user_bundle:
             <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
             <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
             <li><a href="{{ path('fos_user_resetting_request') }}">Forgot password?</a></li>
+            <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
+            <li><a href="{{ path('fos_user_profile_edit') }}">Edit profile</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">Sign Out</a></li>
         </ul>
     </div>
 {% endblock %}

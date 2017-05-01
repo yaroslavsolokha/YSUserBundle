@@ -1,0 +1,23 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'YSUserBundle::layout_login_content.html.twig'  %}
+{% block login_content %}
+    {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+        {{ form_widget(form) }}
+        <div class="row">
+            <div class="col s12">
+                <input type="submit" class="btn col s12" value="{{ 'profile.edit.submit'|trans }}" />
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
+{% block login_action %}
+    {% block login_button %}
+        <div class="card-action">
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn col s12" href="{{ path('fos_user_profile_show') }}">Show profile</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

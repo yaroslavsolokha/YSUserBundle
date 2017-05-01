@@ -1,0 +1,19 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'YSUserBundle::layout_login_content.html.twig'  %}
+{% block login_content %}
+    <div class="fos_user_user_show">
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    </div>
+{% endblock %}
+{% block login_action %}
+    {% block login_button %}
+        <div class="card-action">
+            <div class="row">
+                <div class="col s12">
+                    <a class="btn col s12" href="{{ path('fos_user_profile_edit') }}">Edit profile</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
