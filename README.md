@@ -35,7 +35,16 @@ parameters:
     google_client_id: xxx
     google_client_secret: xxx
 ```
-##### 4. Add to AppKernel.php
+##### 4. Add translator to config.yml
+```
+framework:
+    translator: { fallbacks: ['%locale%'] }
+```
+##### 5. Update schema
+```
+$ bin/console doctrine:schema:update
+```
+##### 6. Add to AppKernel.php
 ```
 $bundles = [
     ...
@@ -53,21 +62,22 @@ $bundles = [
     new YS\UserBundle\YSUserBundle()
 ];
 ```
-##### 5. Add import to config.yml
+##### 7. Add import to config.yml
 ```
 imports:
     ...
     - { resource: "@YSUserBundle/Resources/config/security.yml" }
     - { resource: "@YSUserBundle/Resources/config/config.yml" }
 ```
-##### 6. Add to routing.yml
+##### 8. Add to routing.yml
 ```
 ...
 ys_user_bundle:
     resource: "@YSUserBundle/Resources/config/routing.yml"
 ```
-##### 7. bin/console assets:install
-##### 8. bin/console fos:user:create admin --super-admin
+##### 9. bin/console assets:install
+##### 10. bin/console fos:user:create admin --super-admin
+##### 11. Go XXX/app_dev.php/login
 
 #### TODO
 ##### 1. sonata-project/user-bundle": "dev-add_support_for_fos_user2 - move to bundle composer
