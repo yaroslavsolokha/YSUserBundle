@@ -77,7 +77,24 @@ ys_user_bundle:
 ```
 ##### 9. bin/console assets:install
 ##### 10. bin/console fos:user:create admin --super-admin
-##### 11. Go XXX/app_dev.php/login
-
+##### 11. Go:
+###### - XXX/app_dev.php/login
+###### - XXX/app_dev.php/admin
+###### - XXX/app_dev.php/register
+##### 12. Extend Bundle layout for index page, replace app/Resources/views/default/index.html.twig to:
+```
+{% extends 'YSUserBundle::base.html.twig' %}
+{% block body %}
+    <div class="main container">
+        <h1>YSUserBundle</h1>
+        <ul>
+            <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
+            <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
+            <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
+            <li><a href="{{ path('fos_user_resetting_request') }}">Forgot password?</a></li>
+        </ul>
+    </div>
+{% endblock %}
+```
 #### TODO
 ##### 1. sonata-project/user-bundle": "dev-add_support_for_fos_user2 - move to bundle composer

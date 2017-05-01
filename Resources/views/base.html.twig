@@ -19,16 +19,28 @@
                     <a id="logo-container" href="{{ url('homepage') }}" class="brand-logo">Homepage</a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url('homepage') }}">Home</a></li>
-                        <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
-                        <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
-                        <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
+                        {% endif %}
+                        {% if app.user %}
+                            <li><a href="{{ path('fos_user_security_logout') }}">Sign Out</a></li>
+                        {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
+                            <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
+                        {% endif %}
                     </ul>
 
                     <ul id="nav-mobile" class="side-nav">
                         <li><a href="{{ url('homepage') }}">Home</a></li>
-                        <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
-                        <li><a href="{{ path('fos_user_security_login') }}">Sign in</a></li>
-                        <li><a href="{{ path('fos_user_registration_register') }}">Sign up</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
+                        {% endif %}
+                        {% if app.user %}
+                            <li><a href="{{ path('fos_user_security_logout') }}">Sign Out</a></li>
+                        {% else %}
+                            <li><a href="{{ path('fos_user_security_login') }}">Sign in</a></li>
+                            <li><a href="{{ path('fos_user_registration_register') }}">Sign up</a></li>
+                        {% endif %}
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 </div>
