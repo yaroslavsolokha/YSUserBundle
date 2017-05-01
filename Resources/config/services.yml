@@ -24,4 +24,4 @@ services:
         class: YS\UserBundle\Admin\TagAdmin
         arguments: [~, YS\UserBundle\Entity\Tag, ~]
         tags:
-            - { name: sonata.admin, manager_type: orm, label: Tag }
+            - { name: sonata.admin, manager_type: orm, label: Tags }
