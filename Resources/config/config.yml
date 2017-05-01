@@ -40,8 +40,8 @@ sonata_admin:
                 items:
                     - sonata.user.admin.user
                     - sonata.user.admin.group
-                    - admin.tag
-                    - admin.business_card
+                    - ys.user.admin.tag
+                    - ys.user.admin.business_card
     templates:
         layout:  YSUserBundle::SonataAdminBundle\base.html.twig
 
