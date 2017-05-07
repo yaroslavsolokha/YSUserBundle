@@ -10,8 +10,9 @@ Inside - FOSuserbundle, SonataAdminBundle, SonataUserBundle, HWIOAuthBundle, Mat
     "ys/user-bundle" : "dev-master",
     "sonata-project/user-bundle": "dev-add_support_for_fos_user2"
     },
-"repositories" : [{
-    ...
+"repositories" : [
+...
+{
     "type" : "vcs",
     "url" : "https://github.com/yaroslavsolokha/YSUserBundle.git"
 }],
@@ -40,11 +41,7 @@ parameters:
 framework:
     translator: { fallbacks: ['%locale%'] }
 ```
-##### 5. Update schema
-```
-$ bin/console doctrine:schema:update
-```
-##### 6. Add to AppKernel.php
+##### 5. Add to AppKernel.php
 ```
 $bundles = [
     ...
@@ -62,18 +59,22 @@ $bundles = [
     new YS\UserBundle\YSUserBundle()
 ];
 ```
-##### 7. Add import to config.yml
+##### 6. Add import to config.yml
 ```
 imports:
     ...
     - { resource: "@YSUserBundle/Resources/config/security.yml" }
     - { resource: "@YSUserBundle/Resources/config/config.yml" }
 ```
-##### 8. Add to routing.yml
+##### 7. Add to routing.yml
 ```
 ...
 ys_user_bundle:
     resource: "@YSUserBundle/Resources/config/routing.yml"
+```
+##### 8. Update schema
+```
+$ bin/console doctrine:schema:update
 ```
 ##### 9. bin/console assets:install
 ##### 10. bin/console fos:user:create admin --super-admin
