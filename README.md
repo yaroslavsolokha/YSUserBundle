@@ -1,5 +1,6 @@
 YSUserBundle
 =======
+Documentation for internal settings for bundle
 Inside - FOSuserbundle, SonataAdminBundle, SonataUserBundle, HWIOAuthBundle, Materialize, Bower.
 
 #### Setup
