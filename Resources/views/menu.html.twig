@@ -2,7 +2,7 @@
 {% if is_granted('ROLE_ADMIN') %}
     <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
 {% endif %}
-{% block customMenu %}{% endblock %}
+{{ customMenu }}
 {% if app.user %}
     <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
     <li><a href="{{ path('fos_user_profile_edit') }}">Edit Profile</a></li>
