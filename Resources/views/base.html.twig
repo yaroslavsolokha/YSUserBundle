@@ -14,15 +14,18 @@
     </head>
     <body>
         {% block header %}
+            {% set _customMenu = false %}
+            {% if block('customMenu') is defined %}
+                {% set _customMenu = block('customMenu') %}
+            {% endif %}
             <nav class="white" role="navigation">
-                {% block customMenu %}{% endblock %}
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="{{ url('homepage') }}" class="brand-logo">Homepage</a>
                     <ul class="right hide-on-med-and-down">
-                        {% include 'YSUserBundle::menu.html.twig' with {customMenu: block('customMenu')} %}
+                        {% include 'YSUserBundle::menu.html.twig' with {customMenu: _customMenu} %}
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
-                        {% include 'YSUserBundle::menu.html.twig' with {customMenu: block('customMenu')} %}
+                        {% include 'YSUserBundle::menu.html.twig' with {customMenu: _customMenu} %}
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 </div>
