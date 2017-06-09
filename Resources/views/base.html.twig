@@ -18,10 +18,14 @@
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="{{ url('homepage') }}" class="brand-logo">Homepage</a>
                     <ul class="right hide-on-med-and-down">
-                        {% include 'YSUserBundle::menu.html.twig' %}
+                        {% block menu %}
+                            {% include 'YSUserBundle::menu.html.twig' %}
+                        {% endblock %}
                     </ul>
                     <ul id="nav-mobile" class="side-nav">
-                        {% include 'YSUserBundle::menu.html.twig' %}
+                        {% block menu %}
+                            {% include 'YSUserBundle::menu.html.twig' %}
+                        {% endblock %}
                     </ul>
                     <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
                 </div>
