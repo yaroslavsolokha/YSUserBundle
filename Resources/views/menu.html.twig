@@ -1,15 +1,13 @@
-{% block menu %}
-    <li><a href="{{ url('homepage') }}">Home</a></li>
-    {% if is_granted('ROLE_ADMIN') %}
-        <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
-    {% endif %}
-    {% block customMenu %}{% endblock %}
-    {% if app.user %}
-        <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
-        <li><a href="{{ path('fos_user_profile_edit') }}">Edit Profile</a></li>
-        <li><a href="{{ path('fos_user_security_logout') }}">Sign Out</a></li>
-    {% else %}
-        <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
-        <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
-    {% endif %}
-{% endblock %}
+<li><a href="{{ url('homepage') }}">Home</a></li>
+{% if is_granted('ROLE_ADMIN') %}
+    <li><a href="{{ path('sonata_admin_dashboard') }}">Admin</a></li>
+{% endif %}
+{% block customMenu %}{% endblock %}
+{% if app.user %}
+    <li><a href="{{ path('fos_user_profile_show') }}">Show profile</a></li>
+    <li><a href="{{ path('fos_user_profile_edit') }}">Edit Profile</a></li>
+    <li><a href="{{ path('fos_user_security_logout') }}">Sign Out</a></li>
+{% else %}
+    <li><a href="{{ path('fos_user_security_login') }}">Sign In</a></li>
+    <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
+{% endif %}
