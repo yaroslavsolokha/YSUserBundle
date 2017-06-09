@@ -15,6 +15,7 @@
     <body>
         {% block header %}
             <nav class="white" role="navigation">
+                {% block customMenu %}{% endblock %}
                 <div class="nav-wrapper container">
                     <a id="logo-container" href="{{ url('homepage') }}" class="brand-logo">Homepage</a>
                     <ul class="right hide-on-med-and-down">
