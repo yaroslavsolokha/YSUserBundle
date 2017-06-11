@@ -64,29 +64,73 @@ $bundles = [
 ```
 imports:
     ...
-    - { resource: "@YSUserBundle/Resources/config/security.yml" }
     - { resource: "@YSUserBundle/Resources/config/config.yml" }
 ```
-##### 7. Add to routing.yml
+##### 7. Add to security.yml
+```
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
+security:
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: sha512
+
+    role_hierarchy:
+        ROLE_SONATA_ADMIN: ROLE_USER
+        ROLE_ADMIN: ROLE_SONATA_ADMIN
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                login_path: /login
+                check_path: /login_check
+            oauth:
+                resource_owners:
+                    facebook: "/login/check-facebook"
+                    gplus: "/login/check-google"
+                login_path:  /login
+                oauth_user_provider:
+                    service: ys.user.provider
+            logout:       true
+            anonymous:    true
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+```
+##### 8. Add to routing.yml
 ```
 ...
 ys_user_bundle:
     resource: "@YSUserBundle/Resources/config/routing.yml"
 ```
-##### 8. Update schema
+##### 9. Update schema
 ```
 $ bin/console doctrine:schema:update
 ```
-##### 9. bin/console assets:install
-##### 10. bin/console fos:user:create admin --super-admin
-##### 11. Go:
+##### 10. bin/console assets:install
+##### 11. bin/console fos:user:create admin --super-admin
+##### 12. Go:
 ###### - XXX/app_dev.php/login
 ###### - XXX/app_dev.php/admin
 ###### - XXX/app_dev.php/register
 ###### - XXX/app_dev.php/resetting/request
 ###### - XXX/app_dev.php/profile
 ###### - XXX/app_dev.php/profile/edit
-##### 12. Extend Bundle layout for index page, replace app/Resources/views/default/index.html.twig to:
+##### 13. Extend Bundle layout for index page, replace app/Resources/views/default/index.html.twig to:
 ```
 {% extends 'YSUserBundle::base.html.twig' %}
 {% block body %}
