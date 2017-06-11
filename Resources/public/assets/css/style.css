@@ -13,6 +13,10 @@ p {
   margin: 0 !important;
 }
 
+.btn {
+  margin: 0.1rem 0;
+}
+
 .button-collapse {
   color: #26a69a;
 }
