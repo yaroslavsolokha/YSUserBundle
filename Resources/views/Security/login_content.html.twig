@@ -23,7 +23,7 @@
         </label>
         <input type="password" id="password" name="_password" required="required" />
 
-        <div class="row no-margin">
+        <div class="row no-margin-bottom">
             <div class="col s12">
                 <input type="submit" id="_submit" name="_submit" class="btn col s12" value="Sign in" />
             </div>
@@ -31,7 +31,7 @@
     </form>
 {% endblock %}
 {% block login_button %}
-    <div class="row no-margin">
+    <div class="row no-margin-bottom">
         <div class="col s12">
             <a class="btn col s12" href="{{ path('fos_user_registration_register') }}">Sign up</a>
         </div>

@@ -9,6 +9,10 @@ p {
   line-height: 2rem;
 }
 
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
 .no-margin {
   margin: 0 !important;
 }
