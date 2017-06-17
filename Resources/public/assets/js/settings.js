@@ -1,3 +1,10 @@
+$(document).ready(function(){
+  $('.js-back-button-history').click(function(){
+    parent.history.back();
+    return false;
+  });
+});
+
 if (window.location.hash && window.location.hash == '#_=_') {
   // for facebook oauth
   // https://developers.facebook.com/blog/post/552/
